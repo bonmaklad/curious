@@ -130,7 +130,7 @@ body {
 }
 
 .story__body {
-  font-size: clamp(3rem, 3vw, 2.2rem);
+  font-size: clamp(2rem, 3vw, 2.2rem);
   margin: 0;
   max-width: 36ch;
   color: var(--accent-pink);
@@ -155,7 +155,7 @@ body {
 }
 
 .story__word {
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(2rem, 7vw, 6rem);
   letter-spacing: 0.3em;
   margin: 0;
   line-height: 1.15;
@@ -382,7 +382,7 @@ body {
 .cocktail-intro__copy {
   max-width: 36ch; /* match slide 2 measure */
   text-align: center;
-  font-size: clamp(3rem, 3vw, 2.2rem); /* large readable copy like slide 2 */
+  font-size: clamp(2rem, 3vw, 2.2rem); /* large readable copy like slide 2 */
   line-height: 1.8;
   margin: 0;
   color: #d22f2f; /* red copy as requested */
@@ -526,7 +526,7 @@ body {
     transform: none;
     text-align: center;
     position: static;
-    font-size: clamp(3rem, 10vw, 5rem);
+    font-size: clamp(2rem, 10vw, 5rem);
     color: inherit;
   }
 

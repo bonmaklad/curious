@@ -1,0 +1,257 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID",
+        "placeholder": "homepage"
+      }
+    },
+    "hero_question": {
+      "type": "Text",
+      "config": {
+        "label": "Hero question",
+        "placeholder": "CURIOUS?"
+      }
+    },
+    "hero_line_one": {
+      "type": "Text",
+      "config": {
+        "label": "Hero word line one",
+        "placeholder": "C U R I O U S"
+      }
+    },
+    "hero_line_two": {
+      "type": "Text",
+      "config": {
+        "label": "Hero word line two",
+        "placeholder": "G A R D E N"
+      }
+    },
+    "hero_background": {
+      "type": "Image",
+      "config": {
+        "label": "Hero background"
+      }
+    },
+    "story_title": {
+      "type": "Text",
+      "config": {
+        "label": "Story heading",
+        "placeholder": "CURIOUS\\nGARDEN"
+      }
+    },
+    "story_body": {
+      "type": "StructuredText",
+      "config": {
+        "label": "Story copy",
+        "multi": "paragraph"
+      }
+    },
+    "story_background": {
+      "type": "Image",
+      "config": {
+        "label": "Story background artwork"
+      }
+    }
+  },
+  "Gin": {
+    "gin_title": {
+      "type": "Text",
+      "config": {
+        "label": "Gin title",
+        "placeholder": "GIN"
+      }
+    },
+    "gin_tagline": {
+      "type": "Text",
+      "config": {
+        "label": "Gin tagline",
+        "placeholder": "every sip blossoms."
+      }
+    },
+    "gin_items": {
+      "type": "Group",
+      "config": {
+        "label": "Gin products",
+        "fields": {
+          "title": {
+            "type": "Text",
+            "config": {
+              "label": "Product title"
+            }
+          },
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "label": "Product description",
+              "multi": "paragraph"
+            }
+          },
+          "image": {
+            "type": "Image",
+            "config": {
+              "label": "Product image"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Vodka": {
+    "vodka_title": {
+      "type": "Text",
+      "config": {
+        "label": "Vodka title",
+        "placeholder": "VODKA"
+      }
+    },
+    "vodka_tagline": {
+      "type": "Text",
+      "config": {
+        "label": "Vodka tagline",
+        "placeholder": "every sip warms the spirit."
+      }
+    },
+    "vodka_description": {
+      "type": "StructuredText",
+      "config": {
+        "label": "Vodka description",
+        "multi": "paragraph"
+      }
+    },
+    "vodka_image": {
+      "type": "Image",
+      "config": {
+        "label": "Vodka bottle image"
+      }
+    }
+  },
+  "Cocktails": {
+    "cocktail_intro_eyebrow": {
+      "type": "Text",
+      "config": {
+        "label": "Cocktail badge eyebrow",
+        "placeholder": "twist. shake & pour."
+      }
+    },
+    "cocktail_intro_title": {
+      "type": "Text",
+      "config": {
+        "label": "Cocktail badge title",
+        "placeholder": "CURIOUS COCKTAILS"
+      }
+    },
+    "cocktail_intro_subtitle": {
+      "type": "Text",
+      "config": {
+        "label": "Cocktail badge subtitle",
+        "placeholder": "WATERMELON GIN SOUR"
+      }
+    },
+    "cocktail_intro_footnote": {
+      "type": "Text",
+      "config": {
+        "label": "Cocktail badge footnote",
+        "placeholder": "MADE WITH CURIOUS GARDEN DRY GIN"
+      }
+    },
+    "cocktail_intro_copy": {
+      "type": "StructuredText",
+      "config": {
+        "label": "Cocktail badge copy",
+        "multi": "paragraph"
+      }
+    },
+    "cocktail_intro_background": {
+      "type": "Image",
+      "config": {
+        "label": "Cocktail badge background"
+      }
+    },
+    "cocktails_title": {
+      "type": "Text",
+      "config": {
+        "label": "Cocktails heading",
+        "placeholder": "COCKTAILS"
+      }
+    },
+    "cocktails_tagline": {
+      "type": "Text",
+      "config": {
+        "label": "Cocktails strapline",
+        "placeholder": "twist.shake.pour."
+      }
+    },
+    "cocktails_background": {
+      "type": "Image",
+      "config": {
+        "label": "Cocktails background"
+      }
+    },
+    "cocktail_items": {
+      "type": "Group",
+      "config": {
+        "label": "Cocktail cards",
+        "fields": {
+          "title": {
+            "type": "Text",
+            "config": {
+              "label": "Cocktail title"
+            }
+          },
+          "description": {
+            "type": "StructuredText",
+            "config": {
+              "label": "Cocktail description",
+              "multi": "paragraph"
+            }
+          },
+          "meta": {
+            "type": "StructuredText",
+            "config": {
+              "label": "Made with copy",
+              "multi": "paragraph"
+            }
+          },
+          "image": {
+            "type": "Image",
+            "config": {
+              "label": "Cocktail image"
+            }
+          }
+        }
+      }
+    }
+  },
+  "HowToServe": {
+    "how_to_title": {
+      "type": "Text",
+      "config": {
+        "label": "How to serve heading",
+        "placeholder": "HOW\\nTO\\nSERVE"
+      }
+    },
+    "how_to_tagline": {
+      "type": "Text",
+      "config": {
+        "label": "How to serve tagline",
+        "placeholder": "twist.shake.pour."
+      }
+    },
+    "how_to_images": {
+      "type": "Group",
+      "config": {
+        "label": "Serve imagery",
+        "fields": {
+          "image": {
+            "type": "Image",
+            "config": {
+              "label": "Serve illustration"
+            }
+          }
+        }
+      }
+    }
+  }
+}

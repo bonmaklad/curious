@@ -1,0 +1,478 @@
+@font-face {
+  font-family: "Albertus Nova";
+  src: url("../Fonts/AlbertusNova-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Albertus Nova";
+  src: url("../Fonts/AlbertusNova-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --page-background: #ffffff;
+  --text-dark: #211f1f;
+  --text-light: #ffffff;
+  --accent-green: #7fb942;
+  --accent-pink: #e94c89;
+  --max-width: min(1200px, 92vw);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Albertus Nova", "Segoe UI", sans-serif;
+  background: var(--page-background);
+  color: var(--text-dark);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  scroll-snap-align: start;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--section-bg, none);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.section--hero,
+.section--cocktail-intro,
+.section--cocktails {
+  color: var(--text-light);
+}
+
+.section--hero::before,
+.section--cocktails::before {
+  opacity: 0.12;
+}
+
+.section--cocktail-intro::before {
+  opacity: 0.1;
+}
+
+.section__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: auto;
+  text-align: center;
+  padding: clamp(3rem, 7vw, 6rem) 2rem;
+}
+
+.hero__question {
+  font-size: clamp(2.5rem, 10vw, 6rem);
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  margin: 0 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.hero__word {
+  margin: 0.4rem 0;
+  font-size: clamp(1.5rem, 6vw, 3.5rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.section--story {
+  background: var(--page-background);
+  flex-direction: row;
+  color: var(--text-dark);
+}
+
+.story__text,
+.story__image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+.story__text {
+  background: #ffffff;
+}
+
+.story__body {
+  font-size: clamp(1.1rem, 2.4vw, 1.8rem);
+  margin: 0;
+  max-width: 28ch;
+}
+
+.story__image {
+  position: relative;
+  color: var(--text-light);
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-image: var(--section-bg, none);
+}
+
+.story__title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: 0.3em;
+  margin: 0;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.section--products {
+  background: #ffffff;
+  color: var(--text-dark);
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
+.products__gin {
+  padding: clamp(2rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  justify-content: center;
+}
+
+.products__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-transform: uppercase;
+}
+
+.products__title {
+  font-size: clamp(3rem, 9vw, 6rem);
+  margin: 0;
+  letter-spacing: 0.2em;
+}
+
+.products__tagline {
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  margin: 0;
+  letter-spacing: 0.2em;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.product-card {
+  display: grid;
+  gap: 0.85rem;
+  text-align: center;
+  align-content: start;
+}
+
+.product-card__image {
+  width: clamp(160px, 30vw, 220px);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.product-card__title {
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-card__description {
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  margin: 0;
+}
+
+.products__vodka {
+  position: relative;
+  padding: clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.products__title--vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: clamp(4rem, 11vw, 7rem);
+  margin: 0;
+  letter-spacing: 0.2em;
+}
+
+.products__vodka-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  max-width: 22rem;
+}
+
+.products__description {
+  font-size: clamp(1rem, 2.3vw, 1.1rem);
+  margin: 0;
+}
+
+.products__vodka-image {
+  width: clamp(180px, 30vw, 260px);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.section--cocktail-intro {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.cocktail-intro__badge {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  background-size: cover;
+  background-position: center;
+  background-image: var(--section-bg, none);
+}
+
+.cocktail-intro__badge p {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.cocktail-intro__eyebrow {
+  font-size: clamp(0.75rem, 1.8vw, 1rem);
+}
+
+.cocktail-intro__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.cocktail-intro__subtitle {
+  font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+}
+
+.cocktail-intro__footnote {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  letter-spacing: 0.15em;
+}
+
+.cocktail-intro__story {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2.5rem, 6vw, 4rem);
+  background: #ffffff;
+  color: var(--text-dark);
+}
+
+.cocktail-intro__copy {
+  max-width: 32ch;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  margin: 0;
+}
+
+.section--cocktails {
+  flex-direction: column;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.cocktails__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  align-items: flex-start;
+  max-width: var(--max-width);
+  margin: 0 auto clamp(2rem, 5vw, 3rem);
+}
+
+.cocktails__title {
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  margin: 0;
+  letter-spacing: 0.2em;
+}
+
+.cocktails__tagline {
+  font-size: clamp(1.1rem, 2.4vw, 1.8rem);
+  margin: 0;
+}
+
+.cocktails__grid {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.cocktail-card {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  display: grid;
+  gap: 0.85rem;
+  text-align: center;
+}
+
+.cocktail-card__image {
+  width: clamp(140px, 28vw, 200px);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.cocktail-card__title {
+  font-size: clamp(1.3rem, 2.8vw, 1.6rem);
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+.cocktail-card__description,
+.cocktail-card__meta {
+  margin: 0;
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+}
+
+.section--how-to-serve {
+  background: #ffffff;
+  color: var(--text-dark);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(2.5rem, 6vw, 4rem);
+}
+
+.how-to__heading {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  letter-spacing: 0.2em;
+}
+
+.how-to__title {
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  margin: 0;
+  line-height: 1.2;
+  white-space: pre-line;
+}
+
+.how-to__tagline {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+}
+
+.how-to__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  justify-items: center;
+}
+
+.how-to__image {
+  width: clamp(140px, 24vw, 200px);
+  object-fit: contain;
+}
+
+@media (max-width: 920px) {
+  .section--story {
+    flex-direction: column;
+  }
+
+  .section--products {
+    grid-template-columns: 1fr;
+    padding-bottom: 3rem;
+  }
+
+  .products__title--vertical {
+    writing-mode: initial;
+    transform: none;
+    text-align: center;
+  }
+
+  .products__vodka {
+    padding-top: 0;
+  }
+
+  .cocktail-card {
+    backdrop-filter: blur(12px);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__question {
+    letter-spacing: 0.15em;
+  }
+
+  .hero__word {
+    letter-spacing: 0.3em;
+  }
+
+  .section--cocktail-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .cocktail-intro__badge,
+  .cocktail-intro__story {
+    align-items: center;
+    text-align: center;
+  }
+
+  .story__title {
+    letter-spacing: 0.18em;
+  }
+
+  .cocktails__heading {
+    align-items: center;
+    text-align: center;
+  }
+
+  .how-to__heading {
+    align-items: center;
+    text-align: center;
+  }
+}

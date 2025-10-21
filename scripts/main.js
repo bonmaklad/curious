@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (type === "image" && element.tagName === "IMG") {
         element.setAttribute("src", value);
       } else if (type === "background") {
+        // Set both CSS variable and direct background-image as a compatibility fallback
         element.style.setProperty("--section-bg", `url('${value}')`);
+        element.style.backgroundImage = `url('${value}')`;
       } else {
         element.textContent = value;
       }

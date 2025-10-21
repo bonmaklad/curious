@@ -5,14 +5,16 @@
   window.defaultContent = {
     hero: {
       question: "CURIOUS?",
-      lineOne: "C U R I O U S",
-      lineTwo: "G A R D E N",
-      background: "Images/Curious_Garden_Abstract_Pink.jpg",
+      lineOne: "",
+      lineTwo: "",
+  background: "Images/Curious_Garden_Abstract-Dry.jpg",
     },
     story: {
       body: textBlock,
       title: "CURIOUS\nGARDEN",
-      background: "Images/Curious_Garden_Abstract-Dry.jpg",
+      wordOne: "CURIOUS",
+      wordTwo: "GARDEN",
+      background: "Images/Curious_Garden_Abstract_Pink.jpg",
     },
     products: {
       gin: {

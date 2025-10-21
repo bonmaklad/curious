@@ -22,12 +22,10 @@
         class="section section--hero"
         data-content-key="hero.background"
         data-content-type="background"
-        style="--section-bg: url('Images/Curious_Garden_Abstract_Pink.jpg')"
+        style="--section-bg: url('Images/Curious_Garden_Abstract-Dry.jpg')"
       >
         <div class="section__content">
           <p class="hero__question" data-content-key="hero.question">CURIOUS?</p>
-          <p class="hero__word" data-content-key="hero.lineOne">C U R I O U S</p>
-          <p class="hero__word" data-content-key="hero.lineTwo">G A R D E N</p>
         </div>
       </section>
 
@@ -42,9 +40,12 @@
           class="story__image"
           data-content-key="story.background"
           data-content-type="background"
-          style="--section-bg: url('Images/Curious_Garden_Abstract-Dry.jpg')"
+          style="--section-bg: url('Images/Curious_Garden_Abstract_Pink.jpg')"
         >
-          <p class="story__title" data-content-key="story.title">CURIOUS<br />GARDEN</p>
+          <div class="story__title">
+            <p class="story__word" data-content-key="story.wordOne">CURIOUS</p>
+            <p class="story__word" data-content-key="story.wordTwo">GARDEN</p>
+          </div>
         </div>
       </section>
 
@@ -64,7 +65,6 @@
                 data-content-type="image"
                 data-alt-key="products.gin.items.0.alt"
               />
-              <p class="product-card__title" data-content-key="products.gin.items.0.title">Classic Dry Gin</p>
               <p class="product-card__description" data-content-key="products.gin.items.0.description">
                 This classic dry gin is exceptionally smooth with an elegant hit of juniper and subtle citrus, accompanied
                 by light, bright spice. Refined yet vibrant, like a parterre bursting with new growth.
@@ -79,7 +79,6 @@
                 data-content-type="image"
                 data-alt-key="products.gin.items.1.alt"
               />
-              <p class="product-card__title" data-content-key="products.gin.items.1.title">Delicate Pink Gin</p>
               <p class="product-card__description" data-content-key="products.gin.items.1.description">
                 This delicate pink gin has subtle, sweet floral highlights. Soft and uplifting, like the rose blooms that
                 light up Aotearoa in spring.
@@ -94,30 +93,31 @@
                 data-content-type="image"
                 data-alt-key="products.gin.items.2.alt"
               />
-              <p class="product-card__title" data-content-key="products.gin.items.2.title">Blush Pink Gin</p>
               <p class="product-card__description" data-content-key="products.gin.items.2.description">
                 This blush pink gin is a juicy burst of succulent grapefruit and tangy lemon. Fresh and zesty, just like
                 all those citrus trees in gardens across Aotearoa.
               </p>
             </article>
+            <article class="product-card product-card--vodka">
+              <img
+                class="product-card__image"
+                src="Images/Curious_Garden_Vodka.png"
+                alt="Curious Garden Vodka"
+                data-content-key="products.vodka.image"
+                data-content-type="image"
+                data-alt-key="products.vodka.alt"
+              />
+              <p class="product-card__description" data-content-key="products.vodka.description">
+                This classic vodka is smooth and refined, with a subtle zest set off by the purity of Canterbury’s pristine
+                artesian water.
+              </p>
+            </article>
           </div>
         </div>
         <div class="products__vodka">
-          <p class="products__title products__title--vertical" data-content-key="products.vodka.title">VODKA</p>
-          <div class="products__vodka-content">
-            <p class="products__tagline" data-content-key="products.vodka.tagline">every sip warms the spirit.</p>
-            <p class="products__description" data-content-key="products.vodka.description">
-              This classic vodka is smooth and refined, with a subtle zest set off by the purity of Canterbury’s pristine
-              artesian water.
-            </p>
-            <img
-              class="products__vodka-image"
-              src="Images/Curious_Garden_Vodka.png"
-              alt="Curious Garden Vodka"
-              data-content-key="products.vodka.image"
-              data-content-type="image"
-              data-alt-key="products.vodka.alt"
-            />
+          <div class="products__vodka-vertical">
+            <p class="products__tagline products__tagline--vertical" data-content-key="products.vodka.tagline">every sip warms the spirit.</p>
+            <p class="products__title products__title--vertical" data-content-key="products.vodka.title">VODKA</p>
           </div>
         </div>
       </section>
@@ -142,12 +142,7 @@
         </div>
       </section>
 
-      <section
-        class="section section--cocktails"
-        data-content-key="cocktails.background"
-        data-content-type="background"
-        style="--section-bg: url('Images/Curious_Garden_Abstract_Vodka.jpg')"
-      >
+      <section class="section section--cocktails">
         <div class="cocktails__heading">
           <p class="cocktails__title" data-content-key="cocktails.title">COCKTAILS</p>
           <p class="cocktails__tagline" data-content-key="cocktails.tagline">twist.shake.pour.</p>
@@ -212,35 +207,13 @@
       </section>
 
       <section class="section section--how-to-serve">
-        <div class="how-to__heading">
-          <p class="how-to__title" data-content-key="howTo.title">HOW<br />TO<br />SERVE</p>
-          <p class="how-to__tagline" data-content-key="howTo.tagline">twist.shake.pour.</p>
+        <div class="how-to__left">
+          <p class="how-to__word how-to__word--top">HOW</p>
+          <p class="how-to__word how-to__word--middle">TO</p>
+          <p class="how-to__word how-to__word--bottom">SERVE</p>
         </div>
-        <div class="how-to__gallery">
-          <img
-            class="how-to__image"
-            src="Images/Curious_Garden_Bottle-Pink_Mockup.png"
-            alt="Serve suggestion 1"
-            data-content-key="howTo.images.0.src"
-            data-content-type="image"
-            data-alt-key="howTo.images.0.alt"
-          />
-          <img
-            class="how-to__image"
-            src="Images/Curious_Garden_Bottle-Mockup-COLOURED.png"
-            alt="Serve suggestion 2"
-            data-content-key="howTo.images.1.src"
-            data-content-type="image"
-            data-alt-key="howTo.images.1.alt"
-          />
-          <img
-            class="how-to__image"
-            src="Images/Curious_Garden_Vodka.png"
-            alt="Serve suggestion 3"
-            data-content-key="howTo.images.2.src"
-            data-content-type="image"
-            data-alt-key="howTo.images.2.alt"
-          />
+        <div class="how-to__art">
+          <img class="how-to__hero-image" src="Images/glasses.png" alt="Serving glasses" />
         </div>
       </section>
     </main>

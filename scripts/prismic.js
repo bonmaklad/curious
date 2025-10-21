@@ -221,7 +221,10 @@
           break;
         }
         case "background": {
+          // Set both CSS variable and direct background-image as a compatibility fallback
+          // Some environments may not resolve var() in background-image as expected.
           element.style.setProperty("--section-bg", `url('${value}')`);
+          element.style.backgroundImage = `url('${value}')`;
           break;
         }
         case "html": {

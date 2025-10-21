@@ -1,0 +1,17 @@
+{
+  "name": "curious",
+  "version": "1.0.0",
+  "description": "Static Curious Garden showcase with optional Prismic content overrides.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "curious",
+    "garden",
+    "prismic",
+    "static-site"
+  ],
+  "author": "",
+  "license": "MIT"
+}

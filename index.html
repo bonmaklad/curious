@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Curious Garden</title>
+    <meta
+      name="description"
+      content="Curious Garden – a vibrant collection of gins, vodkas, and cocktails inspired by botanicals and crafted for curious palates."
+    />
+    <link rel="preload" href="Fonts/AlbertusNova-Regular.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="Fonts/AlbertusNova-Bold.otf" as="font" type="font/otf" crossorigin />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/content.js"></script>
+    <script src="scripts/prismic.js"></script>
+    <script src="scripts/prismic.config.js"></script>
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <main class="page" id="page-root">
+      <section
+        class="section section--hero"
+        data-content-key="hero.background"
+        data-content-type="background"
+        style="--section-bg: url('Images/Curious_Garden_Abstract_Pink.jpg')"
+      >
+        <div class="section__content">
+          <p class="hero__question" data-content-key="hero.question">CURIOUS?</p>
+          <p class="hero__word" data-content-key="hero.lineOne">C U R I O U S</p>
+          <p class="hero__word" data-content-key="hero.lineTwo">G A R D E N</p>
+        </div>
+      </section>
+
+      <section class="section section--story">
+        <div class="story__text">
+          <p class="story__body" data-content-key="story.body">
+            People say gin was invented by monks, but there’s no way anyone but a gardener would have thought to infuse a
+            spirit with such a cornucopia of botanicals.
+          </p>
+        </div>
+        <div
+          class="story__image"
+          data-content-key="story.background"
+          data-content-type="background"
+          style="--section-bg: url('Images/Curious_Garden_Abstract-Dry.jpg')"
+        >
+          <p class="story__title" data-content-key="story.title">CURIOUS<br />GARDEN</p>
+        </div>
+      </section>
+
+      <section class="section section--products">
+        <div class="products__gin">
+          <div class="products__heading">
+            <p class="products__title" data-content-key="products.gin.title">GIN</p>
+            <p class="products__tagline" data-content-key="products.gin.tagline">every sip blossoms.</p>
+          </div>
+          <div class="products__grid">
+            <article class="product-card">
+              <img
+                class="product-card__image"
+                src="Images/Curious_Garden_Bottle-Dry_Mockup.png"
+                alt="Curious Garden Classic Dry Gin"
+                data-content-key="products.gin.items.0.image"
+                data-content-type="image"
+                data-alt-key="products.gin.items.0.alt"
+              />
+              <p class="product-card__title" data-content-key="products.gin.items.0.title">Classic Dry Gin</p>
+              <p class="product-card__description" data-content-key="products.gin.items.0.description">
+                This classic dry gin is exceptionally smooth with an elegant hit of juniper and subtle citrus, accompanied
+                by light, bright spice. Refined yet vibrant, like a parterre bursting with new growth.
+              </p>
+            </article>
+            <article class="product-card">
+              <img
+                class="product-card__image"
+                src="Images/Curious_Garden_Bottle-Pink_Mockup.png"
+                alt="Curious Garden Delicate Pink Gin"
+                data-content-key="products.gin.items.1.image"
+                data-content-type="image"
+                data-alt-key="products.gin.items.1.alt"
+              />
+              <p class="product-card__title" data-content-key="products.gin.items.1.title">Delicate Pink Gin</p>
+              <p class="product-card__description" data-content-key="products.gin.items.1.description">
+                This delicate pink gin has subtle, sweet floral highlights. Soft and uplifting, like the rose blooms that
+                light up Aotearoa in spring.
+              </p>
+            </article>
+            <article class="product-card">
+              <img
+                class="product-card__image"
+                src="Images/Curious_Garden_Bottle-Mockup-COLOURED.png"
+                alt="Curious Garden Blush Pink Gin"
+                data-content-key="products.gin.items.2.image"
+                data-content-type="image"
+                data-alt-key="products.gin.items.2.alt"
+              />
+              <p class="product-card__title" data-content-key="products.gin.items.2.title">Blush Pink Gin</p>
+              <p class="product-card__description" data-content-key="products.gin.items.2.description">
+                This blush pink gin is a juicy burst of succulent grapefruit and tangy lemon. Fresh and zesty, just like
+                all those citrus trees in gardens across Aotearoa.
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="products__vodka">
+          <p class="products__title products__title--vertical" data-content-key="products.vodka.title">VODKA</p>
+          <div class="products__vodka-content">
+            <p class="products__tagline" data-content-key="products.vodka.tagline">every sip warms the spirit.</p>
+            <p class="products__description" data-content-key="products.vodka.description">
+              This classic vodka is smooth and refined, with a subtle zest set off by the purity of Canterbury’s pristine
+              artesian water.
+            </p>
+            <img
+              class="products__vodka-image"
+              src="Images/Curious_Garden_Vodka.png"
+              alt="Curious Garden Vodka"
+              data-content-key="products.vodka.image"
+              data-content-type="image"
+              data-alt-key="products.vodka.alt"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--cocktail-intro">
+        <div
+          class="cocktail-intro__badge"
+          data-content-key="cocktailIntro.background"
+          data-content-type="background"
+          style="--section-bg: url('Images/Curious_Garden_Abstract_Grapefruit.jpg')"
+        >
+          <p class="cocktail-intro__eyebrow" data-content-key="cocktailIntro.eyebrow">TWIST. SHAKE &amp; POUR</p>
+          <p class="cocktail-intro__title" data-content-key="cocktailIntro.title">CURIOUS COCKTAILS</p>
+          <p class="cocktail-intro__subtitle" data-content-key="cocktailIntro.subtitle">WATERMELON GIN SOUR</p>
+          <p class="cocktail-intro__footnote" data-content-key="cocktailIntro.footnote">MADE WITH CURIOUS GARDEN DRY GIN</p>
+        </div>
+        <div class="cocktail-intro__story">
+          <p class="cocktail-intro__copy" data-content-key="cocktailIntro.copy">
+            People say gin was invented by monks, but there’s no way anyone but a gardener would have thought to infuse a
+            spirit with such a cornucopia of botanicals.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="section section--cocktails"
+        data-content-key="cocktails.background"
+        data-content-type="background"
+        style="--section-bg: url('Images/Curious_Garden_Abstract_Vodka.jpg')"
+      >
+        <div class="cocktails__heading">
+          <p class="cocktails__title" data-content-key="cocktails.title">COCKTAILS</p>
+          <p class="cocktails__tagline" data-content-key="cocktails.tagline">twist.shake.pour.</p>
+        </div>
+        <div class="cocktails__grid">
+          <article class="cocktail-card">
+            <img
+              class="cocktail-card__image"
+              src="Images/Curious_Garden_Bottle-Mockup-COLOURED.png"
+              alt="Tropical Martini"
+              data-content-key="cocktails.items.0.image"
+              data-content-type="image"
+              data-alt-key="cocktails.items.0.alt"
+            />
+            <p class="cocktail-card__title" data-content-key="cocktails.items.0.title">Tropical Martini</p>
+            <p class="cocktail-card__description" data-content-key="cocktails.items.0.description">
+              Tropical Martini balances the refreshing tartness of passionfruit with the heady flavour of guava for a fragrant,
+              fruity drink. A luscious dose of paradise to transport you to good times.
+            </p>
+            <p class="cocktail-card__meta" data-content-key="cocktails.items.0.meta">
+              This Curious Cocktail is made with Curious Garden Vodka, a smooth, refined vodka with a subtle zest.
+            </p>
+          </article>
+          <article class="cocktail-card">
+            <img
+              class="cocktail-card__image"
+              src="Images/Curious_Garden_Bottle-Pink_Mockup.png"
+              alt="Watermelon Gin Sour"
+              data-content-key="cocktails.items.1.image"
+              data-content-type="image"
+              data-alt-key="cocktails.items.1.alt"
+            />
+            <p class="cocktail-card__title" data-content-key="cocktails.items.1.title">Watermelon Gin Sour</p>
+            <p class="cocktail-card__description" data-content-key="cocktails.items.1.description">
+              Watermelon Gin Sour blends the refreshing sweetness of watermelon with tangy citrus for a tart, juicy taste
+              sensation. Get the party started with this explosion of flavour.
+            </p>
+            <p class="cocktail-card__meta" data-content-key="cocktails.items.1.meta">
+              This Curious Cocktail is made with Curious Garden Classic Dry Gin, a smooth gin with an elegant hit of juniper
+              and subtle citrus, accompanied by light, bright spice.
+            </p>
+          </article>
+          <article class="cocktail-card">
+            <img
+              class="cocktail-card__image"
+              src="Images/Curious_Garden_Vodka.png"
+              alt="Espresso Martini"
+              data-content-key="cocktails.items.2.image"
+              data-content-type="image"
+              data-alt-key="cocktails.items.2.alt"
+            />
+            <p class="cocktail-card__title" data-content-key="cocktails.items.2.title">Espresso Martini</p>
+            <p class="cocktail-card__description" data-content-key="cocktails.items.2.description">
+              Espresso Martini infuses a rich, aromatic brew of Brazilian coffee with a kick of spirit and a smooth, creamy
+              finish. A warming, velvety pick-me up to be savoured with friends.
+            </p>
+            <p class="cocktail-card__meta" data-content-key="cocktails.items.2.meta">
+              This Curious Cocktail is made with Curious Garden Vodka, a smooth, refined vodka with a subtle zest.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--how-to-serve">
+        <div class="how-to__heading">
+          <p class="how-to__title" data-content-key="howTo.title">HOW<br />TO<br />SERVE</p>
+          <p class="how-to__tagline" data-content-key="howTo.tagline">twist.shake.pour.</p>
+        </div>
+        <div class="how-to__gallery">
+          <img
+            class="how-to__image"
+            src="Images/Curious_Garden_Bottle-Pink_Mockup.png"
+            alt="Serve suggestion 1"
+            data-content-key="howTo.images.0.src"
+            data-content-type="image"
+            data-alt-key="howTo.images.0.alt"
+          />
+          <img
+            class="how-to__image"
+            src="Images/Curious_Garden_Bottle-Mockup-COLOURED.png"
+            alt="Serve suggestion 2"
+            data-content-key="howTo.images.1.src"
+            data-content-type="image"
+            data-alt-key="howTo.images.1.alt"
+          />
+          <img
+            class="how-to__image"
+            src="Images/Curious_Garden_Vodka.png"
+            alt="Serve suggestion 3"
+            data-content-key="howTo.images.2.src"
+            data-content-type="image"
+            data-alt-key="howTo.images.2.alt"
+          />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

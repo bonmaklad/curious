@@ -688,6 +688,11 @@ body {
     display: none;
   }
 
+  /* Hide the large vertical VODKA title/tagline on mobile, keep the bottle card */
+  .products__vodka-text {
+    display: none;
+  }
+
   .section--story {
     flex-direction: column;
   }
@@ -764,6 +769,19 @@ body {
   .cocktails__heading {
     align-items: center;
     text-align: center;
+  }
+
+  /* Make COCKTAILS smaller on mobile to avoid horizontal scrolling */
+  .cocktails__title {
+    font-size: clamp(2rem, 10vw, 3.2rem);
+    letter-spacing: 0.06em;
+  }
+
+  /* Keep tagline tucked under the end of the word, but smaller */
+  .cocktails__tagline {
+    right: 1rem;
+    bottom: -0.35em;
+    font-size: clamp(0.75rem, 3vw, 0.95rem);
   }
 
   .section--how-to-serve {

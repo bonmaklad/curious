@@ -54,11 +54,11 @@
       },
     },
     cocktailIntro: {
-      eyebrow: "twist. shake & pour.",
+  eyebrow: "Twist, Shake + Pour",
       title: "CURIOUS COCKTAILS",
       subtitle: "WATERMELON GIN SOUR",
       footnote: "MADE WITH CURIOUS GARDEN DRY GIN",
-      background: "Images/Curious_Garden_Abstract_Grapefruit.jpg",
+      background: "Images/CC_Watermellon.jpg",
       copy: textBlock,
     },
     cocktails: {
@@ -72,7 +72,7 @@
             "Tropical Martini balances the refreshing tartness of passionfruit with the heady flavour of guava for a fragrant, fruity drink. A luscious dose of paradise to transport you to good times.",
           meta:
             "This Curious Cocktail is made with Curious Garden Vodka, a smooth, refined vodka with a subtle zest.",
-          image: "Images/Curious_Garden_Bottle-Mockup-COLOURED.png",
+          image: "Images/Curious_Cocktails_Tropical.jpg",
           alt: "Curious Garden cocktail bottle",
         },
         {
@@ -81,7 +81,7 @@
             "Watermelon Gin Sour blends the refreshing sweetness of watermelon with tangy citrus for a tart, juicy taste sensation. Get the party started with this explosion of flavour.",
           meta:
             "This Curious Cocktail is made with Curious Garden Classic Dry Gin, a smooth gin with an elegant hit of juniper and subtle citrus, accompanied by light, bright spice.",
-          image: "Images/Curious_Garden_Bottle-Pink_Mockup.png",
+          image: "Images/Curious_Cocktails_Watermelon.jpg",
           alt: "Curious Garden Watermelon Gin Sour bottle",
         },
         {
@@ -90,7 +90,7 @@
             "Espresso Martini infuses a rich, aromatic brew of Brazilian coffee with a kick of spirit and a smooth, creamy finish. A warming, velvety pick-me up to be savoured with friends.",
           meta:
             "This Curious Cocktail is made with Curious Garden Vodka, a smooth, refined vodka with a subtle zest.",
-          image: "Images/Curious_Garden_Vodka.png",
+          image: "Images/Curious_Cocktails_Espresso.png",
           alt: "Curious Garden Espresso Martini bottle",
         },
       ],

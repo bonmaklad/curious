@@ -124,7 +124,7 @@ body {
 .hero__question {
   font-size: clamp(2.5rem, 10vw, 6rem);
   letter-spacing: 0.25em;
-  font-weight: 300; /* Thin display weight */
+  font-weight: 200; /* Thin display weight */
   margin: 0 0 clamp(1.5rem, 4vw, 3rem);
   font-family: var(--font-display);
 }
@@ -214,7 +214,12 @@ body {
   align-items: stretch;
   justify-content: space-between;
   min-height: 100vh;
-  padding: clamp(1rem, 4vh, 2.5rem) clamp(1rem, 4vw, 2.5rem);
+  /* expose section padding as variables so we can position VODKA outside of it */
+  --side-pad: clamp(1rem, 4vw, 2.5rem);
+  --vert-pad: clamp(1rem, 4vh, 2.5rem);
+  padding: var(--vert-pad) var(--side-pad);
+  /* keep any oversized vertical text inside the viewport */
+  overflow: hidden;
 }
 
 /* center divider for products section */
@@ -240,8 +245,10 @@ body {
 
 .products__heading {
   display: flex;
-  align-items: center;
-  gap: clamp(0.6rem, 1.6vw, 1.5rem);
+  /* Place the tagline on the bottom edge of the big GIN word */
+  align-items: flex-end;
+  /* Pull the tagline closer to GIN */
+  gap: clamp(0.25rem, 0.9vw, 0.75rem);
   text-transform: uppercase;
   margin: clamp(0.75rem, 2vh, 1.5rem) 0 0;
 }
@@ -258,6 +265,9 @@ body {
   margin: 0;
   letter-spacing: 0.05em;
   color: var(--accent-pink);
+  /* Match display font used for the GIN title */
+  font-family: var(--font-display);
+  line-height: 1; /* keep the baseline tight to sit at the bottom of GIN */
 }
 
 
@@ -352,7 +362,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 clamp(1rem, 2.5vw, 2rem);
+  /* remove right padding so the big vertical word can intrude the edge */
+  padding: 0 clamp(1rem, 2.5vw, 2rem) 0 0;
   gap: clamp(1rem, 2vw, 2rem);
   justify-content: center;
   width: 100%;
@@ -412,6 +423,8 @@ body {
   align-items: center;
   flex-shrink: 0;
   margin-top: clamp(1.5rem, 4vh, 3rem);
+  /* allow the absolutely-positioned vertical text to escape section padding */
+  position: static;
 }
 
 /* Right-side vertical stack for VODKA and its tagline */
@@ -419,19 +432,26 @@ body {
 .products__vodka-vertical {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: flex-start; /* tagline starts at the top of the V */
   gap: clamp(0.5rem, 1.2vw, 1rem);
   pointer-events: none;
   justify-content: center;
   padding: 0;
   margin: 0;
+  position: absolute;
+  top: 50%;
+  /* anchor to the inside edge so it stays within the 100% container */
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 
 .products__title--vertical {
   writing-mode: vertical-rl;
   transform: none;
-  font-size: clamp(2.8rem, 7.5vw, 5.6rem);
+  /* make VODKA much larger on desktop */
+  font-size: clamp(3.5rem, 11vw, 10rem);
   margin: 0;
   letter-spacing: 0.08em;
   color: #17353c;
@@ -441,7 +461,7 @@ body {
 .products__tagline--vertical {
   writing-mode: vertical-rl;
   color: #17353c;
-  font-size: clamp(0.75rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.8vw, 1.2rem);
   letter-spacing: 0.05em;
   margin: 0;
   line-height: 1.1;
@@ -475,15 +495,14 @@ body {
 .cocktail-intro__badge {
   position: relative;
   padding: clamp(2.5rem, 6vw, 4rem);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center; /* center align per design */
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* top icon, middle content, bottom footnote */
+  row-gap: 1rem;
+  justify-items: center;
   background-size: cover;
   background-position: center;
   background-image: var(--section-bg, none);
-  text-align: center; /* center text inside badge */
+  text-align: center;
   min-height: 100%;
 }
 
@@ -493,20 +512,19 @@ body {
   letter-spacing: 0.2em;
 }
 
-.cocktail-intro__eyebrow {
-  font-size: clamp(0.75rem, 1.8vw, 1rem);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: auto; /* stick to top */
+/* Eyebrow: just the PNG icon, no words */
+.cocktail-intro__eyebrow-icon {
+  width: clamp(64px, 12vw, 110px);
+  height: auto;
+  display: block;
+  align-self: start; /* top row */
 }
 
-.cocktail-intro__eyebrow::before {
-  content: "";
-  width: clamp(18px, 2.8vw, 28px);
-  height: clamp(18px, 2.8vw, 28px);
-  background: url("../Images/glasses.png") center/contain no-repeat;
-  filter: brightness(0) invert(1); /* make icon light on dark backgrounds */
+.cocktail-intro__middle {
+  align-self: center; /* middle row */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .cocktail-intro__title {
@@ -521,6 +539,7 @@ body {
   font-size: clamp(0.85rem, 2vw, 1rem);
   letter-spacing: 0.15em;
   white-space: nowrap; /* keep on one line */
+  align-self: end; /* bottom row */
 
 }
 
@@ -544,33 +563,42 @@ body {
 }
 
 .section--cocktails {
-  flex-direction: column;
+  /* full-height section like products */
+  display: grid;
+  grid-template-rows: auto 1fr; /* heading then content */
   padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
   background: #ffffff;
   color: var(--text-dark);
+  min-height: 100vh;
 }
 
 .cocktails__heading {
-  display: flex;
-  flex-direction: row; /* title and small tagline on the right */
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  justify-items: start;
+  gap: 0.5rem;
   text-transform: uppercase;
   max-width: var(--max-width);
-  margin: 0 auto clamp(3rem, 6vw, 4rem);
+  width: 100%;
+  margin: 0 auto clamp(2rem, 5vw, 3rem);
 }
 
 .cocktails__title {
-  font-size: clamp(3.5rem, 10vw, 10rem); /* responsive BIG COCKTAILS */
+  font-size: clamp(4rem, 12vw, 12rem); /* bigger and more left */
   margin: 0;
   letter-spacing: 0.08em;
   color: var(--accent-green);
+  text-align: left;
 }
 
 .cocktails__tagline {
-  font-size: clamp(0.9rem, 2vw, 1.2rem); /* small on the right */
-  margin: 0 0 0 auto;
+  position: absolute;
+  right: clamp(1rem, 3vw, 2rem); /* sit near end of the word */
+  bottom: -0.2em; /* slightly under the baseline of the title */
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  margin: 0;
   color: var(--accent-green);
 }
 

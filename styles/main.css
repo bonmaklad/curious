@@ -1,4 +1,28 @@
 @font-face {
+  font-family: "Futura PT";
+  src: local("Futura PT Light"), local("FuturaPT-Light"), local("Futura PT Book"), local("FuturaPT-Book");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: local("Futura PT Book"), local("FuturaPT-Book");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: local("Futura PT Bold"), local("FuturaPT-Bold");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Albertus Nova";
   src: url("../Fonts/AlbertusNova-Regular.otf") format("opentype");
   font-weight: 400;
@@ -22,6 +46,7 @@
   --accent-green: #7fb942;
   --accent-pink: #e94c89;
   --max-width: min(1200px, 92vw);
+  --font-display: "Futura PT", "Futura", "Albertus Nova", "Segoe UI", sans-serif;
 }
 
 * {
@@ -99,8 +124,9 @@ body {
 .hero__question {
   font-size: clamp(2.5rem, 10vw, 6rem);
   letter-spacing: 0.25em;
-  font-weight: 400; /* Use Albertus Nova Regular on hero */
+  font-weight: 300; /* Thin display weight */
   margin: 0 0 clamp(1.5rem, 4vw, 3rem);
+  font-family: var(--font-display);
 }
 
 .hero__word {
@@ -108,6 +134,23 @@ body {
   font-size: clamp(1.5rem, 6vw, 3.5rem);
   letter-spacing: 0.4em;
   text-transform: uppercase;
+}
+
+.hero__question,
+.story__word,
+.products__title,
+.products__title--vertical,
+.cocktail-intro__title,
+.cocktails__title,
+.how-to__word {
+  font-family: var(--font-display);
+}
+
+.hero__question,
+.story__word,
+.cocktails__title,
+.how-to__word {
+  font-weight: 300;
 }
 
 .section--story {
@@ -131,10 +174,11 @@ body {
 
 .story__body {
   font-size: clamp(2rem, 3vw, 2.2rem);
-  margin: 0;
-  max-width: 36ch;
+  margin: 0 auto;
+  max-width: 32ch;
   color: var(--accent-pink);
   line-height: 1.8; /* more space between lines */
+  text-align: center;
 }
 
 .story__image {
@@ -167,8 +211,10 @@ body {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   position: relative;
-  align-items: start;
+  align-items: stretch;
   justify-content: space-between;
+  min-height: 100vh;
+  padding: clamp(1rem, 4vh, 2.5rem) clamp(1rem, 4vw, 2.5rem);
 }
 
 /* center divider for products section */
@@ -184,65 +230,62 @@ body {
 }
 
 .products__gin {
-  padding: 0 clamp(2.4225rem, 4.0375vw, 4.845rem) clamp(1.0225rem, 2.0375vw, 2.845rem) clamp(2.4225rem, 4.0375vw, 4.845rem); /* Removed top padding */
+  padding: clamp(1.2rem, 2.5vh, 2rem) clamp(1.4rem, 3vw, 2.5rem) clamp(1rem, 2vh, 2rem) clamp(1.4rem, 3vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  gap: clamp(0.285rem, 0.57vw, 0.76rem); /* Reduced gap between heading and grid */
+  gap: clamp(0.5rem, 1.2vw, 1.5rem);
   justify-content: center;
   width: 100%;
 }
 
 .products__heading {
   display: flex;
-  align-items: baseline;
-  gap: 0.95rem;
+  align-items: center;
+  gap: clamp(0.6rem, 1.6vw, 1.5rem);
   text-transform: uppercase;
-  margin-bottom: 0;
+  margin: clamp(0.75rem, 2vh, 1.5rem) 0 0;
 }
 
 .products__title {
-  font-size: clamp(6.46rem, 16.15vw, 12.92rem); /* Reduced by 20% total */
+  font-size: clamp(3rem, 8.5vw, 7rem);
   margin: 0;
-  margin-bottom: 0;
   letter-spacing: 0.1em;
   color: var(--accent-pink);
 }
 
 .products__tagline {
-  font-size: clamp(1.1628rem, 2.5441vw, 2.0349rem); /* Reduced by 20% total */
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
   margin: 0;
   letter-spacing: 0.05em;
   color: var(--accent-pink);
 }
 
+
 .products__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(0.95rem, 1.9vw, 2.85rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.5vw, 2rem);
   justify-items: center;
+  /* Align product cards to the top so bottle tops line up across the row */
   align-items: start;
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   margin: 0 auto;
-  margin-top: 0;
-  padding-top: 0;
+  margin-top: clamp(1rem, 3vh, 2rem);
 }
 
 .product-card {
   display: grid;
-  grid-template-rows: auto auto;
-  gap: 0.8075rem; /* Reduced by 20% total */
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: clamp(0.5rem, 1vw, 1rem);
   text-align: center;
-  align-content: start;
-  width: max-content;
-  max-width: 323px; /* Reduced by 20% total */
-  align-self: start;
+  align-content: end;
+  justify-items: center;
+  width: min(100%, 15rem);
 }
 
 .product-card--vodka {
-  width: auto;
-  max-width: 323px; /* Reduced by 20% total */
-  min-width: auto;
+  width: min(100%, 15rem);
 }
 
 .product-card--vodka .product-card__description {
@@ -265,28 +308,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
   height: 100%;
-  padding: clamp(1.9rem, 3.8vw, 3.8rem) 0;
+  padding: clamp(1rem, 3vh, 2rem) 0;
 }
 
 .products__divider-vertical svg {
-  height: 80vh;
-  width: clamp(2px, 0.3vw, 5px);
+  height: min(60vh, 480px);
+  width: clamp(2px, 0.3vw, 4px);
   min-width: 2px;
   display: block;
 }
 
 .product-card__image {
-  width: clamp(177.65px, 20.1875vw, 282.625px); /* Reduced by 20% total */
-  height: clamp(258.4px, 28.2625vw, 403.75px); /* Fixed height for alignment, reduced by 20% total */
-  margin: 0;
-  margin-top: 0;
-  padding: 0;
-  padding-top: 0;
-  object-fit: cover;
-  object-position: top center; /* Align bottles to bottom for consistent baseline */
+  width: clamp(150px, 16vw, 210px);
+  height: clamp(240px, 26vh, 300px);
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: top center;
   display: block;
+  align-self: start;
 }
 
 .product-card__title {
@@ -296,23 +336,24 @@ body {
   text-transform: uppercase;
 }
 
+
 .product-card__description {
-  font-size: clamp(0.8075rem, 1.7765vw, 1.04975rem); /* Reduced by 20% total */
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
   margin: 0 auto;
-  max-width: 19ch; /* Reduced by 20% total */
-  width: 65%;
+  max-width: 22ch;
+  width: 100%;
   overflow-wrap: anywhere;
-  word-break: normal;
-  line-height: 1.5;
-  color: var(--accent-pink); /* Match tagline color */
+  line-height: 1.4;
+  color: var(--accent-pink);
 }
+
 
 .products__vodka-section {
   display: flex;
   flex-direction: row;
-  align-items: start;
-  padding: 0 clamp(2.4225rem, 4.0375vw, 4.845rem) clamp(1.01125rem, 1.51875vw, 1.4225rem) clamp(2.4225rem, 4.0375vw, 4.845rem); /* Bottom padding reduced to 50% */
-  gap: clamp(0.95rem, 1.9vw, 1.9rem);
+  align-items: center;
+  padding: 0 clamp(1rem, 2.5vw, 2rem);
+  gap: clamp(1rem, 2vw, 2rem);
   justify-content: center;
   width: 100%;
 }
@@ -340,7 +381,7 @@ body {
 
 .products__heading-spacer::before {
   content: "GIN";
-  font-size: clamp(6.46rem, 16.15vw, 12.92rem); /* Reduced by 20% total */
+  font-size: clamp(3rem, 9vw, 7.5rem);
   letter-spacing: 0.1em;
   opacity: 0;
   white-space: nowrap;
@@ -349,7 +390,7 @@ body {
 
 .products__heading-spacer::after {
   content: "every sip blossoms.";
-  font-size: clamp(1.1628rem, 2.5441vw, 2.0349rem); /* Reduced by 20% total */
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
   letter-spacing: 0.05em;
   opacity: 0;
   white-space: nowrap;
@@ -357,53 +398,53 @@ body {
 
 .products__vodka {
   display: flex;
-  justify-content: flex-start;
-  align-items: start;
+  justify-content: flex-end;
+  /* Match gin grid behaviour: align the vodka card to the top so tops line up */
+  align-items: flex-start;
   width: fit-content;
 }
+
 
 .products__vodka-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
-  margin-top: 12vh; /* Shift down 10% from top to bottom */
+  margin-top: clamp(1.5rem, 4vh, 3rem);
 }
 
 /* Right-side vertical stack for VODKA and its tagline */
+
 .products__vodka-vertical {
   display: flex;
-  flex-direction: row; /* tagline to the left of VODKA */
-  align-items: flex-start;
-  gap: 0.475rem;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: clamp(0.5rem, 1.2vw, 1rem);
   pointer-events: none;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 0;
   margin: 0;
 }
 
+
 .products__title--vertical {
   writing-mode: vertical-rl;
-  transform: none; /* correct orientation (top to bottom) */
-  font-size: clamp(4.845rem, 12.92vw, 11.305rem); /* Reduced by 20% total */
+  transform: none;
+  font-size: clamp(2.8rem, 7.5vw, 5.6rem);
   margin: 0;
-  padding: 0;
-  letter-spacing: 0.1em;
-  color: #17353c; /* dark green */
-  line-height: 100%;
+  letter-spacing: 0.08em;
+  color: #17353c;
+  line-height: 1;
 }
 
 .products__tagline--vertical {
   writing-mode: vertical-rl;
-  transform: rotate(0);
   color: #17353c;
-  font-size: clamp(1.615rem, 3.23vw, 2.4225rem); /* Reduced by 20% total */
+  font-size: clamp(0.75rem, 1.8vw, 1.1rem);
   letter-spacing: 0.05em;
   margin: 0;
-  margin-top: clamp(2.4225rem, 6.46vw, 5.6525rem); /* Reduced by 20% total */
-  padding: 0;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .products__vodka-content {
@@ -492,12 +533,13 @@ body {
   color: var(--text-dark);
 }
 
+
 .cocktail-intro__copy {
-  max-width: 36ch; /* match slide 2 measure */
+  max-width: 32ch; /* match story slide measure */
   text-align: center;
   font-size: clamp(2rem, 3vw, 2.2rem); /* large readable copy like slide 2 */
   line-height: 1.8;
-  margin: 0;
+  margin: 0 auto;
   color: #d22f2f; /* red copy as requested */
 }
 

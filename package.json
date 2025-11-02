@@ -4,7 +4,10 @@
   "description": "Static Curious Garden showcase with optional Prismic content overrides.",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node tools/build.js",
+    "deploy": "npx --yes firebase-tools deploy --project curiousgarden --only hosting",
+    "build-and-deploy": "npm run build && npm run deploy"
   },
   "keywords": [
     "curious",

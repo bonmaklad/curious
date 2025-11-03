@@ -1,6 +1,8 @@
 @font-face {
   font-family: "Futura PT";
-  src: local("Futura PT Light"), local("FuturaPT-Light"), local("Futura PT Book"), local("FuturaPT-Book");
+  src:
+    local("Futura PT Light"), local("FuturaPT-Light"),
+    url("../Fonts/FuturaCyrillicLight.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -8,7 +10,9 @@
 
 @font-face {
   font-family: "Futura PT";
-  src: local("Futura PT Book"), local("FuturaPT-Book");
+  src:
+    local("Futura PT Book"), local("FuturaPT-Book"),
+    url("../Fonts/FuturaCyrillicBook.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -16,8 +20,50 @@
 
 @font-face {
   font-family: "Futura PT";
-  src: local("Futura PT Bold"), local("FuturaPT-Bold");
+  src:
+    local("Futura PT Medium"), local("FuturaPT-Medium"),
+    url("../Fonts/FuturaCyrillicMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src:
+    local("Futura PT Demi"), local("FuturaPT-Demi"),
+    url("../Fonts/FuturaCyrillicDemi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src:
+    local("Futura PT Bold"), local("FuturaPT-Bold"),
+    url("../Fonts/FuturaCyrillicBold.ttf") format("truetype");
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src:
+    local("Futura PT Extra Bold"), local("FuturaPT-ExtraBold"),
+    url("../Fonts/FuturaCyrillicExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src:
+    local("Futura PT Heavy"), local("FuturaPT-Heavy"),
+    url("../Fonts/FuturaCyrillicHeavy.ttf") format("truetype");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
@@ -46,7 +92,8 @@
   --accent-green: #7fb942;
   --accent-pink: #e94c89;
   --max-width: min(1200px, 92vw);
-  --font-display: "Futura PT", "Futura", "Albertus Nova", "Segoe UI", sans-serif;
+  /* Use Futura PT when available; otherwise fall back to Jost (Futura-inspired, web-served) */
+  --font-display: "Futura PT", "Futura", "Jost", "Albertus Nova", "Segoe UI", sans-serif;
 }
 
 * {

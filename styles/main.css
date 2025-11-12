@@ -213,6 +213,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: clamp(2rem, 5vw, 4rem);
+  min-height: 50vh;
 }
 
 .story__text {
@@ -220,11 +221,11 @@ body {
 }
 
 .story__body {
-  font-size: clamp(2rem, 3vw, 2.2rem);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
   margin: 0 auto;
   max-width: 32ch;
   color: var(--accent-pink);
-  line-height: 1.8; /* more space between lines */
+  line-height: 1.6;
   text-align: center;
 }
 
@@ -340,6 +341,7 @@ body {
   justify-content: center;
   padding: clamp(2rem, 5vw, 4rem);
   text-align: center;
+  min-height: 50vh;
 }
 
 .cocktail-intro__story {
@@ -349,8 +351,8 @@ body {
 
 .cocktail-intro__copy {
   max-width: 32ch;
-  font-size: clamp(2rem, 3vw, 2.2rem);
-  line-height: 1.8;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  line-height: 1.6;
   margin: 0 auto;
 }
 
@@ -563,6 +565,10 @@ body {
   }
 
   .section--story {
+    flex-direction: column;
+  }
+
+  .section--cocktail-intro {
     flex-direction: column;
   }
 

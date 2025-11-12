@@ -98,22 +98,16 @@
       ],
     },
     howTo: {
-      title: "HOW\nTO\nSERVE",
-      tagline: "twist.shake.pour.",
-      images: [
-        {
-          src: "Images/Curious_Garden_Bottle-Pink_Mockup.png",
-          alt: "Serve suggestion with pink gin",
-        },
-        {
-          src: "Images/Curious_Garden_Bottle-Mockup-COLOURED.png",
-          alt: "Serve suggestion with grapefruit gin",
-        },
-        {
-          src: "Images/Curious_Garden_Vodka.png",
-          alt: "Serve suggestion with vodka",
-        },
+      title: "HOW TO SERVE",
+      icon: "Images/champage.svg",
+      steps: [
+        { number: "1", title: "TWIST", subtitle: "off my cork" },
+        { number: "2", title: "SHAKE", subtitle: "with meaning" },
+        { number: "3", title: "POUR", subtitle: "me over ice" },
+        { number: "4", title: "ADORE", subtitle: "with friends" },
       ],
+      footerLine: "FOR BEST RESULTS, MIX WITH FUN",
+      footerBadge: "GOOD TIMES CERTIFIED",
     },
   };
 })();

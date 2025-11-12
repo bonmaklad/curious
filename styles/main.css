@@ -478,22 +478,36 @@ body {
 
 .how-to-step {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-  text-transform: uppercase;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 .how-to-step__number {
-  margin: 0;
-  font-size: clamp(0.85rem, 1.6vw, 1.1rem);
-  letter-spacing: 0.35em;
+  margin: 0 0 clamp(0.35rem, 1vh, 0.6rem);
+  font-size: clamp(0.8rem, 1.4vw, 1rem);
+  letter-spacing: 0.2em;
+  width: clamp(2rem, 4vw, 2.8rem);
+  height: clamp(2rem, 4vw, 2.8rem);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #00a88f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .how-to-step__icon {
   width: clamp(48px, 9vw, 72px);
   height: auto;
   display: block;
+}
+
+.how-to-step__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.25rem;
 }
 
 .how-to-step__title {
@@ -521,10 +535,11 @@ body {
 }
 
 .how-to__footer-line {
-  margin: 0;
+  margin: 0 0 0 auto;
   font-size: clamp(0.85rem, 1.4vw, 1rem);
   letter-spacing: 0.25em;
   text-transform: uppercase;
+  text-align: right;
 }
 
 .how-to__footer-badge {
@@ -534,6 +549,7 @@ body {
   text-transform: uppercase;
   padding-left: clamp(1rem, 3vw, 1.5rem);
   border-left: 1px solid rgba(255, 255, 255, 0.7);
+  text-align: right;
 }
 
 @media (max-width: 920px) {
@@ -569,13 +585,13 @@ body {
 
   .how-to__footer {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
   }
 
   .how-to__footer-badge {
     border-left: none;
     padding-left: 0;
+    text-align: right;
   }
 }
 
@@ -621,8 +637,7 @@ body {
   }
 
   .how-to__footer {
-    text-align: center;
-    align-items: center;
+    align-items: stretch;
   }
 
 }

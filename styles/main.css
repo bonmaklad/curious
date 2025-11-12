@@ -188,13 +188,13 @@ body {
 .story__word,
 .products__headline,
 .cocktail-intro__title,
-.cocktails__title,
+.cocktails__headline,
 .how-to__word {
   font-family: var(--font-display);
 }
 
 .story__word,
-.cocktails__title,
+.cocktails__headline,
 .how-to__word {
   font-weight: 300;
 }
@@ -383,80 +383,66 @@ body {
 }
 
 .section--cocktails {
-  /* full-height section like products */
-  display: grid;
-  grid-template-rows: auto 1fr; /* heading then content */
-  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
   background: #ffffff;
   color: var(--text-dark);
   min-height: 100vh;
-}
-
-.cocktails__heading {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: end;
-  justify-items: start;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  max-width: var(--max-width);
-  width: 100%;
-  margin: 0 auto clamp(2rem, 5vw, 3rem);
-}
-
-.cocktails__title {
-  font-size: clamp(4rem, 12vw, 12rem); /* bigger and more left */
-  margin: 0;
-  letter-spacing: 0.08em;
-  color: var(--accent-green);
-  text-align: left;
-}
-
-.cocktails__tagline {
-  position: absolute;
-  right: clamp(1rem, 3vw, 2rem); /* sit near end of the word */
-  bottom: -0.2em; /* slightly under the baseline of the title */
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  margin: 0;
-  color: var(--accent-green);
-}
-
-.cocktails__grid {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: grid;
-  gap: clamp(2rem, 3vw, 3rem);
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.cocktail-card {
-  background: transparent; /* no card background */
-  color: var(--text-dark);
-  padding: 0.5rem 0;
-  display: grid;
-  gap: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2.5rem, 7vh, 4rem) clamp(1.5rem, 6vw, 4rem);
+  gap: clamp(1.5rem, 4vh, 3rem);
   text-align: center;
 }
 
-.cocktail-card__image {
-  width: clamp(200px, 26vw, 620px); /* big but responsive */
-  margin: 0 auto;
-  object-fit: contain;
+.cocktails__header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.cocktail-card__title { display: none; }
+.cocktails__headline {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  letter-spacing: 0.35em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.cocktails__grid {
+  width: min(1000px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  justify-items: center;
+  align-items: start;
+}
+
+.cocktail-card {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: clamp(0.6rem, 1.2vw, 1.25rem);
+  text-align: center;
+  max-width: 16rem;
+  width: 100%;
+}
+
+.cocktail-card__image {
+  width: clamp(150px, 18vw, 220px);
+  height: clamp(230px, 28vh, 300px);
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+}
 
 .cocktail-card__description {
   margin: 0 auto;
-  max-width: 34ch;
-  font-size: clamp(0.85rem, 1.4vw, 0.95rem); /* small copy */
-  color: var(--accent-green); /* green writing */
+  max-width: 24ch;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  color: var(--text-dark);
   line-height: 1.5;
 }
-
-.cocktail-card__meta { display: none; }
 
 .section--how-to-serve {
   background: #ffffff;
@@ -516,8 +502,13 @@ body {
     padding: clamp(2rem, 7vh, 3.5rem) clamp(1rem, 6vw, 2.5rem);
   }
 
-  .cocktail-card {
-    backdrop-filter: blur(12px);
+  .cocktails__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  .cocktails__headline {
+    letter-spacing: 0.25em;
   }
 }
 
@@ -550,22 +541,12 @@ body {
     letter-spacing: 0.18em;
   }
 
-  .cocktails__heading {
-    align-items: center;
-    text-align: center;
+  .cocktails__grid {
+    grid-template-columns: 1fr;
   }
 
-  /* Make COCKTAILS smaller on mobile to avoid horizontal scrolling */
-  .cocktails__title {
-    font-size: clamp(2rem, 10vw, 3.2rem);
-    letter-spacing: 0.06em;
-  }
-
-  /* Keep tagline tucked under the end of the word, but smaller */
-  .cocktails__tagline {
-    right: 1rem;
-    bottom: -0.35em;
-    font-size: clamp(0.75rem, 3vw, 0.95rem);
+  .cocktails__headline {
+    letter-spacing: 0.18em;
   }
 
   .section--how-to-serve {

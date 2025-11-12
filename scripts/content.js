@@ -63,6 +63,7 @@
       copy: textBlock,
     },
     cocktails: {
+      headline: "TWIST, SHAKE + POUR",
       title: "COCKTAILS",
       tagline: "twist.shake.pour.",
       background: "Images/Curious_Garden_Abstract_Vodka.jpg",

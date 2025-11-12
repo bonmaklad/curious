@@ -17,6 +17,7 @@
       background: "Images/Curious_Garden_Abstract_Pink.jpg",
     },
     products: {
+      headline: "EVERY SIP BLOSSOMS",
       gin: {
         title: "GIN",
         tagline: "every sip blossoms.",

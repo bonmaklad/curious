@@ -253,6 +253,14 @@ body {
   line-height: 1.15;
 }
 
+.story__tagline {
+  margin: 0.35rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  color: var(--text-light);
+}
+
 .section--products {
   background: #ffffff;
   color: var(--text-dark);

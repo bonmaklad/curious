@@ -110,6 +110,7 @@
       story: {
         body: richTextToPlainText(data.story_body || data.story_copy || ""),
         title: data.story_title || "",
+        tagline: data.story_tagline || "",
         background: data.story_background?.url || "",
       },
       products: {

@@ -14,6 +14,7 @@
       title: "CURIOUS\nGARDEN",
       wordOne: "CURIOUS",
       wordTwo: "GARDEN",
+      tagline: "SMALL BATCH GINS & VODKA",
       background: "Images/Curious_Garden_Abstract_Pink.jpg",
     },
     products: {
@@ -55,12 +56,13 @@
       },
     },
     cocktailIntro: {
-  eyebrow: "Twist, Shake + Pour",
+      eyebrow: "Twist, Shake + Pour",
       title: "CURIOUS COCKTAILS",
-      subtitle: "WATERMELON GIN SOUR",
+      subtitle: "HANDCRAFTED PREMIUM COCKTAILS",
       footnote: "MADE WITH CURIOUS GARDEN DRY GIN",
       background: "Images/CC_Watermellon.jpg",
-      copy: textBlock,
+      copy:
+        "Crafted for the curious, these ready-to-drink creations bring bar-quality flavour to wherever the good times flow. Made with premium Curious Garden spirits, each cocktail is vibrant, smooth, and a little bit mischievous. Good times certified.",
     },
     cocktails: {
       headline: "TWIST, SHAKE + POUR",
@@ -78,7 +80,7 @@
           alt: "Curious Garden cocktail bottle",
         },
         {
-          title: "Watermelon Gin Sour",
+          title: "HANDCRAFTED PREMIUM COCKTAILS",
           description:
             "Watermelon Gin Sour blends the refreshing sweetness of watermelon with tangy citrus for a tart, juicy taste sensation. Get the party started with this explosion of flavour.",
           meta:

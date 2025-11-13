@@ -146,7 +146,7 @@
       "type": "Text",
       "config": {
         "label": "Cocktail badge subtitle",
-        "placeholder": "WATERMELON GIN SOUR"
+        "placeholder": "HANDCRAFTED PREMIUM COCKTAILS"
       }
     },
     "cocktail_intro_footnote": {

@@ -199,6 +199,11 @@ body {
   font-weight: 300;
 }
 
+/* Match COCKTAILS headline weight to products headline (EVERY SIP BLOSSOMS) */
+.cocktails__headline {
+  font-weight: 400;
+}
+
 .section--story {
   background: var(--page-background);
   /* Swap columns so CURIOUS GARDEN block is on the left */
@@ -259,6 +264,8 @@ body {
   letter-spacing: 0.15em;
   font-size: clamp(0.8rem, 2vw, 1.1rem);
   color: var(--text-light);
+  /* Set in Albertus to match CURIOUS GARDEN */
+  font-family: "Albertus Nova", "Segoe UI", sans-serif !important;
 }
 
 .section--products {
@@ -324,6 +331,9 @@ body {
   width: 100%;
   line-height: 1.5;
   color: var(--text-dark);
+  /* Set in FUTURA PT BOOK */
+  font-family: "Futura PT", "Jost", "Albertus Nova", "Segoe UI", sans-serif;
+  font-weight: 400;
 }
 
 
@@ -380,9 +390,12 @@ body {
 }
 
 .cocktail-intro__title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  /* Match size/spacing of slide 2 'CURIOUS GARDEN' */
+  font-size: clamp(2rem, 7vw, 6rem);
   font-family: var(--font-display);
   font-weight: 300;
+  letter-spacing: 0.3em;
+  line-height: 1.15;
 }
 
 .cocktail-intro__subtitle {
@@ -390,6 +403,8 @@ body {
   font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: 0.25em;
+  /* Set in Albertus to match requested subhead styling */
+  font-family: "Albertus Nova", "Segoe UI", sans-serif !important;
 }
 
 .section--cocktails {
@@ -452,6 +467,9 @@ body {
   font-size: clamp(0.85rem, 1.4vw, 1rem);
   color: var(--text-dark);
   line-height: 1.5;
+  /* Match product description font: FUTURA PT BOOK */
+  font-family: "Futura PT", "Jost", "Albertus Nova", "Segoe UI", sans-serif;
+  font-weight: 400;
 }
 
 .section--how-to-serve {
@@ -477,6 +495,9 @@ body {
   font-size: clamp(2.2rem, 6vw, 3.5rem);
   letter-spacing: 0.35em;
   text-transform: uppercase;
+  /* Set in FUTURA PT MEDIUM */
+  font-family: "Futura PT", "Jost", "Albertus Nova", "Segoe UI", sans-serif;
+  font-weight: 500;
 }
 
 .how-to__steps {

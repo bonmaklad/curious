@@ -528,8 +528,9 @@ body {
 }
 
 .how-to-step__icon {
-  width: clamp(48px, 9vw, 72px);
-  height: auto;
+  /* Ensure all icons render with the same visual height */
+  height: clamp(56px, 8vw, 80px);
+  width: auto;
   display: block;
 }
 

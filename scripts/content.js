@@ -101,7 +101,12 @@
     },
     howTo: {
       title: "HOW TO SERVE",
-      icon: "Images/champage.svg",
+      images: [
+        { src: "Images/1_TWIST.svg", alt: "Twist icon" },
+        { src: "Images/2_SHAKE.svg", alt: "Shake icon" },
+        { src: "Images/3_POUR.svg", alt: "Pour icon" },
+        { src: "Images/4_ADORE.svg", alt: "Adore icon" }
+      ],
       steps: [
         { number: "1", title: "TWIST", subtitle: "off my cork" },
         { number: "2", title: "SHAKE", subtitle: "with meaning" },

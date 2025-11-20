@@ -77,6 +77,44 @@ async function copyDir(srcDir, destDir) {
     }
   }
 
+  // Optionally generate prismic.config.js from environment variables for CI/CD (e.g., Amplify)
+  try {
+    const envRepo = process.env.PRISMIC_REPOSITORY_NAME || process.env.PRISMIC_REPOSITORY || process.env.PRISMIC_REPO || "";
+    const envEndpoint = process.env.PRISMIC_ENDPOINT || ""; // e.g., curious-garden.cdn.prismic.io
+    const envToken = process.env.PRISMIC_ACCESS_TOKEN || process.env.PRISMIC_TOKEN || "";
+    const envDocType = process.env.PRISMIC_DOCUMENT_TYPE || "homepage";
+    const envDocUID = process.env.PRISMIC_DOCUMENT_UID || "homepage";
+
+    function deriveRepoName() {
+      if (envRepo) return envRepo.replace(/^https?:\/\//, '')
+        .replace(/\.cdn\.prismic\.io.*/, '')
+        .replace(/\.prismic\.io.*/, '')
+        .trim();
+      if (!envEndpoint) return "";
+      let host = envEndpoint.trim();
+      try { host = new URL(host.startsWith('http') ? host : `https://${host}`).host; } catch (_) {}
+      // host like curious-garden.cdn.prismic.io -> repo = part before first dot
+      return (host.split('.')[0] || '').trim();
+    }
+
+    function esc(str) {
+      return String(str).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    }
+
+    const repoName = deriveRepoName();
+    if (repoName) {
+      const cfg = `window.prismicConfig = {\n  repositoryName: "${esc(repoName)}",\n  documentType: "${esc(envDocType)}",\n  documentUID: "${esc(envDocUID)}",\n  accessToken: "${esc(envToken)}"\n};\n`;
+      const outPath = path.join(dist, 'scripts', 'prismic.config.js');
+      await ensureDir(path.dirname(outPath));
+      await fsp.writeFile(outPath, cfg, 'utf8');
+      console.log('Generated scripts/prismic.config.js from environment variables');
+    } else {
+      console.log('No PRISMIC_* env found; using checked-in scripts/prismic.config.js');
+    }
+  } catch (e) {
+    console.warn('Could not generate prismic.config.js from env:', e.message);
+  }
+
   console.log('Build complete -> dist/');
 })().catch((err) => {
   console.error(err);

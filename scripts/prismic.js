@@ -65,6 +65,12 @@
   function mapPrismicDocument(doc) {
     if (!doc || !doc.data) return null;
     const data = doc.data;
+    // Derive split words for the story title to match UI bindings
+    const rawStoryTitle = (data.story_title || "").toString();
+    const byLine = rawStoryTitle.split(/\r?\n/).filter(Boolean);
+    const titleParts = byLine.length >= 2 ? byLine : rawStoryTitle.split(/\s+/).filter(Boolean);
+    const storyWordOne = titleParts[0] || "";
+    const storyWordTwo = titleParts[1] || "";
 
     const ginItems = Array.isArray(data.gin_items)
       ? data.gin_items.map((item) => ({
@@ -110,10 +116,13 @@
       story: {
         body: richTextToPlainText(data.story_body || data.story_copy || ""),
         title: data.story_title || "",
+        wordOne: storyWordOne,
+        wordTwo: storyWordTwo,
         tagline: data.story_tagline || "",
         background: data.story_background?.url || "",
       },
       products: {
+        headline: data.products_headline || "",
         gin: {
           title: data.gin_title || "",
           tagline: data.gin_tagline || "",

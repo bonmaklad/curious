@@ -6,8 +6,9 @@ window.prismicConfig = {
    * documentUID: The UID of the document (defaults to "homepage").
    * accessToken: Optional – required only when your repository is private.
    */
-  repositoryName: "",
+  repositoryName: "curious-garden",
   documentType: "homepage",
-  documentUID: "homepage",
+  // leave blank to fetch the first published document of this type
+  documentUID: "",
   accessToken: "",
 };

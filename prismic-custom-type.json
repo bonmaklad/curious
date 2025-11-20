@@ -55,6 +55,15 @@
       }
     }
   },
+  "Products": {
+    "products_headline": {
+      "type": "Text",
+      "config": {
+        "label": "Products headline",
+        "placeholder": "EVERY SIP BLOSSOMS"
+      }
+    }
+  },
   "Gin": {
     "gin_title": {
       "type": "Text",

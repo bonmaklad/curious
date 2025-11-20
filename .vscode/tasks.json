@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Set Prismic repo name",
+			"type": "shell",
+			"command": "powershell -NoProfile -Command \"$path = 'scripts/prismic.config.js'; (Get-Content $path) -replace 'repositoryName:\\s*\"\"', 'repositoryName: \"curious-garden\"' | Set-Content $path; Write-Host 'Updated prismic.config.js'\"",
+			"group": "build"
+		}
+	]
+}

@@ -168,6 +168,86 @@ body {
   padding: clamp(3rem, 7vw, 6rem) 2rem;
 }
 
+/* Hero nav bar on first slide */
+.hero-nav {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 3;
+  pointer-events: none; /* allow inner to handle clicks */
+}
+
+.hero-nav__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 1.75rem) 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  pointer-events: auto;
+}
+
+.hero-nav__logo {
+  width: clamp(3.4rem, 5vw, 3.2rem);
+  height: clamp(3.4rem, 5vw, 3.2rem);
+  border-radius: 999px;
+  /* border: 1px solid rgba(255, 255, 255, 0.7); */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.hero-nav__logo img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.hero-nav__links {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.3rem);
+}
+
+.hero-nav__link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+
+.hero-nav__link--icon {
+  width: clamp(1.6rem, 3vw, 2.1rem);
+  height: clamp(1.6rem, 3vw, 2.1rem);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-nav__link--icon i {
+  font-size: 0.9rem;
+}
+
+.hero-nav__link--button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+.hero-nav__link--button:hover,
+.hero-nav__link--icon:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Previous custom-drawn social icons replaced by Font Awesome brand icons */
+
 .hero__question {
   /* 30% larger to fill more of the hero */
   font-size: clamp(3.25rem, 13vw, 7.8rem);
@@ -290,7 +370,7 @@ body {
 
 .products__headline {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-size: clamp(3.6rem, 5vw, 3rem);
   letter-spacing: 0.35em;
   margin: 0;
   text-transform: uppercase;
@@ -316,7 +396,7 @@ body {
 }
 
 .product-card__image {
-  width: clamp(160px, 15vw, 220px);
+  width: clamp(260px, 15vw, 220px);
   height: clamp(260px, 28vh, 320px);
   margin: 0 auto;
   object-fit: contain;
@@ -453,8 +533,8 @@ body {
 }
 
 .cocktail-card__image {
-  width: clamp(150px, 18vw, 220px);
-  height: clamp(230px, 28vh, 300px);
+  width: clamp(300px, 18vw, 220px);
+  height: clamp(300px, 28vh, 300px);
   margin: 0 auto;
   object-fit: contain;
   object-position: center bottom;
@@ -532,6 +612,86 @@ body {
   height: clamp(56px, 8vw, 80px);
   width: auto;
   display: block;
+}
+
+/* Global scroll control – circular button with animated arrow, centered at bottom */
+.page-scroll {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(1.2rem, 4vh, 2rem);
+  transform: translateX(-50%);
+  width: clamp(2.6rem, 4vw, 3.1rem);
+  height: clamp(2.6rem, 4vw, 3.1rem);
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  z-index: 30; /* Above footer (20) so it remains clickable */
+}
+
+.page-scroll__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.85rem;
+  height: 1.1rem;
+}
+
+.page-scroll__icon::before,
+.page-scroll__icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Down arrow stem */
+.page-scroll__icon::before {
+  top: 0;
+  width: 0;
+  height: 70%;
+  border-left: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+/* Down arrow head */
+.page-scroll__icon::after {
+  bottom: 0;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+/* Up-state on last slide: shorten stem and flip arrow */
+.page-scroll--up .page-scroll__icon::before {
+  top: 30%;
+  height: 60%;
+}
+
+.page-scroll--up .page-scroll__icon::after {
+  top: 0;
+  bottom: auto;
+  border-left: 2px solid rgba(255, 255, 255, 0.9);
+  border-top: 2px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 0;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.page-scroll {
+  animation: page-scroll-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes page-scroll-bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 0.4rem);
+  }
 }
 
 .how-to-step__copy {
@@ -676,4 +836,98 @@ body {
     align-items: stretch;
   }
 
+}
+
+/* Site footer mirroring hero nav, shown only on HOW TO SERVE slide */
+.site-footer {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 5;
+}
+
+.site-footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem clamp(1.25rem, 3vh, 1.75rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-footer__logo {
+  width: clamp(3.4rem, 5vw, 3.2rem);
+  height: clamp(3.4rem, 5vw, 3.2rem);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.site-footer__logo img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.site-footer__back-to-top {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  padding: 0.4rem 1.4rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  cursor: pointer;
+}
+
+.site-footer__links {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.3rem);
+}
+
+.site-footer__link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.site-footer__link--icon {
+  width: clamp(1.6rem, 3vw, 2.1rem);
+  height: clamp(1.6rem, 3vw, 2.1rem);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.site-footer__link--icon i {
+  font-size: 0.9rem;
+}
+
+.site-footer__link--button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+.site-footer__link--button:hover,
+.site-footer__link--icon:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 640px) {
+  .site-footer__inner {
+    padding-inline: 1.25rem;
+    gap: 1rem;
+  }
 }

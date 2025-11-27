@@ -260,7 +260,7 @@ body {
 .hero__logo {
   display: block;
   margin: 0 auto clamp(0.75rem, 2.5vw, 1.25rem);
-  width: clamp(160px, 28vw, 420px);
+  width: clamp(120px, 21vw, 315px);
   height: auto;
   filter: drop-shadow(0 6px 22px rgba(0,0,0,0.3));
 }
@@ -866,8 +866,8 @@ body {
 }
 
 .site-footer__logo {
-  width: clamp(4.4rem, 5vw, 3.2rem);
-  height: clamp(4.4rem, 5vw, 3.2rem);
+  width: clamp(3.3rem, 3.75vw, 2.4rem);
+  height: clamp(3.3rem, 3.75vw, 2.4rem);
   border-radius: 999px;
   display: inline-flex;
   align-items: center;

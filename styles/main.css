@@ -188,14 +188,14 @@ body {
 }
 
 .hero-nav__logo {
-  width: clamp(3.4rem, 5vw, 3.2rem);
-  height: clamp(3.4rem, 5vw, 3.2rem);
+  width: clamp(4.4rem, 5vw, 3.2rem);
+  height: clamp(4.4rem, 5vw, 3.2rem);
   border-radius: 999px;
   /* border: 1px solid rgba(255, 255, 255, 0.7); */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.25);
+  /* background-color: rgba(0, 0, 0, 0.25); */
 }
 
 .hero-nav__logo img {
@@ -856,13 +856,13 @@ body {
 }
 
 .site-footer__logo {
-  width: clamp(3.4rem, 5vw, 3.2rem);
-  height: clamp(3.4rem, 5vw, 3.2rem);
+  width: clamp(4.4rem, 5vw, 3.2rem);
+  height: clamp(4.4rem, 5vw, 3.2rem);
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.25);
+  /* background-color: rgba(0, 0, 0, 0.25); */
 }
 
 .site-footer__logo img {

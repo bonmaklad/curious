@@ -208,6 +208,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: clamp(0.75rem, 2vw, 1.3rem);
+  margin-left: auto; /* push socials + contact to the right */
 }
 
 .hero-nav__link {
@@ -253,8 +254,15 @@ body {
   font-size: clamp(3.25rem, 13vw, 7.8rem);
   letter-spacing: 0.25em;
   font-weight: 400; /* Thin display weight */
-  margin: 0 0 clamp(1.5rem, 4vw, 3rem);
+  margin: clamp(1rem, 2vw, 1.5rem) 0 clamp(1.5rem, 4vw, 3rem);
   font-family: var(--font-display);
+}
+.hero__logo {
+  display: block;
+  margin: 0 auto clamp(0.75rem, 2.5vw, 1.25rem);
+  width: clamp(160px, 28vw, 420px);
+  height: auto;
+  filter: drop-shadow(0 6px 22px rgba(0,0,0,0.3));
 }
 
 .hero__word {
@@ -559,6 +567,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: clamp(2.5rem, 8vh, 4rem) clamp(1.5rem, 6vw, 4rem);
+  overflow: hidden; /* keep this slide to one viewport, no extra scroll */
 }
 
 .how-to__inner {
@@ -568,6 +577,7 @@ body {
   align-items: center;
   gap: clamp(1.5rem, 4vh, 3rem);
   text-align: center;
+  padding-bottom: clamp(3.5rem, 10vh, 6rem); /* reserve space above fixed footer */
 }
 
 .how-to__title {
@@ -841,14 +851,14 @@ body {
 /* Site footer mirroring hero nav, shown only on HOW TO SERVE slide */
 .site-footer {
   position: absolute;
-  inset: 0 0 auto 0; /* stick to top like hero nav */
+  inset: auto 0 0 0; /* stick to bottom */
   z-index: 5;
 }
 
 .site-footer__inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 2rem clamp(1.25rem, 3vh, 1.75rem);
+  padding: clamp(0.45rem, 1.6vh, 0.9rem) 2rem clamp(1.8rem, 4vh, 2.6rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -931,3 +941,7 @@ body {
     gap: 1rem;
   }
 }
+
+/* On How To Serve slide, hide footer logo and push socials to bottom-right */
+.section--how-to-serve .site-footer__logo { display: none; }
+.section--how-to-serve .site-footer__inner { justify-content: flex-end; }
